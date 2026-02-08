@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Valentine ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #fff;
+    }
+
+    img {
+      width: 250px;
+      border-radius: 20px;
+      margin: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    button {
+      font-size: 18px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #00ff9c;
+    }
+
+    .no {
+      background: #ff4b5c;
+      position: absolute;
+    }
+
+    .heart {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+      transform: rotate(-45deg);
+      margin: 30px auto;
+      animation: beat 1s infinite;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      width: 100px;
+      height: 100px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart:before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: 50px;
+      top: 0;
+    }
+
+    @keyframes beat {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.1) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Hey My bachaa 💕</h1>
+<h2>Will you be my Valentine? 💌</h2>
+
+<button class="yes" onclick="yesClicked()">YES 😍</button>
+<button class="no" id="noBtn" onmouseover="moveNo()">NO 😜</button>
+
+<div class="heart"></div>
+
+<h2 id="message"></h2>
+
+<h2>Our Memories 💑</h2>
+<img src="images/photo1.jpg">
+<img src="images/photo2.jpg">
+
+<h2>Quick Questions 😜</h2>
+
+<p>Do you love me more than food? 🍕</p>
+<button onclick="alert('I knew it 😍')">YES</button>
+<button onclick="alert('Lie detected 🤣')">NO</button>
+
+<p>Can I be your  forever plan? </p>
+<button onclick="alert('Best answer ❤️')">YES</button>
+<button onclick="alert('Wrong answer :(')">NO</button>
+
+<h2>One Last Thing 💖</h2>
+<p>
+I choose you.  
+Every day.  
+Every moment.  
+Forever ❤️
+</p>
+
+
+<script>
+  function moveNo() {
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 100);
+    document.getElementById("noBtn").style.left = x + "px";
+    document.getElementById("noBtn").style.top = y + "px";
+  }
+
+  function yesClicked() {
+    document.getElementById("message").innerHTML =
+      "YAYYYY 😍❤️ I LOVE YOU SO MUCH 💍";
+  }
+
+  
+</script>
+
+</body>
+</html>
